@@ -100,3 +100,30 @@ button:hover {
 .task-item.completed {
     text-decoration: line-through;
 }
+.display {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto; /* Center the display div */
+    max-width: 400px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+p
+{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    
+}

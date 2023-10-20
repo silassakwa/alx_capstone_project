@@ -72,3 +72,31 @@ button:hover {
 .completed {
     background-color: #c2f9c2; /* Green background for completed tasks */
 }
+.edit-button {
+    background-color: #ffc107; /* Yellow background color */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.edit-button:hover {
+    background-color: #ff9800; /* Darker yellow on hover */
+}
+/* Style for the "Delete" button */
+.delete-button {
+    background-color: #ff4d4d; /* Red background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff0000; /* Darker red on hover */
+}
+.task-item.completed {
+    text-decoration: line-through;
+}

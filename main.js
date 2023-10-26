@@ -1,65 +1,58 @@
+// This is a function that will be called when a form is submitted
 function validateForm(event) {
-    var task = document.getElementById("task_name").value;
+    // Get the value of the "task_name" input field
+    var taskname = document.getElementById("task_name").value;
+    // Get the value of the "start_date" input field
     var startdate = document.getElementById("start_date").value;
+    // Get the value of the "end_date" input field
     var enddate = document.getElementById("end_date").value;
-    var isComplete = document.getElementById("is_complete");
+    // Get the element where error messages will be displayed
     var errors = document.getElementById("error");
 
-    if (task === "") {
-        errors.textContent = "Please fill the task name";
-        event.preventDefault();
-        return false;
+    // Check if the "task_name" field is empty
+    if (taskname === "") {
+        // If it's empty, set an error message and prevent the form from submitting
+        errors.textContent = "Task name cannot be blank";
+        event.preventDefault(); // Prevent the default form submission
+        return false; // Indicate that the form is not valid
     }
+
+    // Check if the "start_date" field is empty
     if (startdate === "") {
-        errors.textContent = "Please fill the start date";
-        event.preventDefault();
-        return false;
+        // If it's empty, set an error message and prevent the form from submitting
+        errors.textContent = "Start date cannot be blank";
+        event.preventDefault(); // Prevent the default form submission
+        return false; // Indicate that the form is not valid
     }
+
+    // Check if the "end_date" field is empty
     if (enddate === "") {
-        errors.textContent = "Please fill the end date";
-        event.preventDefault();
-        return false;
+        // If it's empty, set an error message and prevent the form from submitting
+        errors.textContent = "End date cannot be blank";
+        event.preventDefault(); // Prevent the default form submission
+        return false; // Indicate that the form is not valid
+    } else {
+        // If all fields are filled, clear any previous error message
+        errors.textContent = "";
+
+        // Create a new list item and populate it with task information
+        var taskList = document.getElementById("task-list");
+        var listItem = document.createElement("li");
+        listItem.textContent = `Task: ${taskname}, Start Date: ${startdate}, End Date: ${enddate}`;
+
+        // Append the new list item to the task list
+        taskList.appendChild(listItem);
+
+        // Reset form fields after adding the task
+        document.getElementById("task_name").value = "";
+        document.getElementById("start_date").value = "";
+        document.getElementById("end_date").value = "";
+
+        event.preventDefault(); // Prevent the default form submission
+        return false; // Indicate that the form is not valid
+
+
+
     }
-    errors.textContent = "";
-
-    // Add the task to the task list
-    addTaskToList(task, startdate, enddate, isComplete.checked);
-
-    // Clear input fields
-    document.getElementById("task_name").value = "";
-    document.getElementById("start_date").value = "";
-    document.getElementById("end_date").value = "";
-    isComplete.checked = false;
-
-    event.preventDefault();
-    return true;
-}
-
-function addTaskToList(taskName, startDate, endDate, isComplete) {
-    var taskList = document.getElementById("task-list");
-    var taskItem = document.createElement("li");
-    taskItem.className = "task-item" + (isComplete ? " completed" : "");
-    taskItem.innerHTML = `
-        <span>Task: ${taskName}</span><br>
-        <span>Start Date: ${startDate}</span><br>
-        <span>End Date: ${endDate}</span><br>
-        <span>${isComplete ? "Is Complete" : "Not Complete"}</span>
-        <button class="complete-button" onclick="markComplete(this)">Mark as Complete</button>
-        <button class="complete-button" onclick="markNotComplete(this)">Not Complete</button>
-    `;
-
-    // Append the task item to the task list
-    taskList.appendChild(taskItem);
-}
-
-function markComplete(button) {
-    var taskItem = button.parentNode;
-    taskItem.classList.add("completed");
-    taskItem.querySelector("span:last-child").textContent = "Is Complete";
-}
-
-function markNotComplete(button) {
-    var taskItem = button.parentNode;
-    taskItem.classList.remove("completed");
-    taskItem.querySelector("span:last-child").textContent = "Not Complete";
-}
+    
+      } 

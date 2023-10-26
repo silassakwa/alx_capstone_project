@@ -26,7 +26,8 @@ function validateForm(event) {
         var taskList = document.getElementById("task-list");
         var listItem = document.createElement("li");
 
-        // Create a checkbox for task completion status
+ 
+        
         var completionCheckbox = document.createElement("input");
         completionCheckbox.type = "checkbox";
         completionCheckbox.addEventListener("change", function () {

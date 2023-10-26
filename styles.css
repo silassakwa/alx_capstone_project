@@ -127,3 +127,7 @@ p
     font-family: 'Times New Roman', Times, serif;
     
 }
+.completed {
+    text-decoration: line-through; /* Strike through the text */
+    color: red;
+    font-style: italic; /* Italicize the text */}

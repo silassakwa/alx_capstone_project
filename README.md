@@ -12,6 +12,7 @@
 - Git
 ### How to interact with the project
 - clone the project https://github.com/silassakwa/alx_capstone_project.git
+- https://silassakwa.github.io/alx_capstone_project/
 
 ### screenshot of the project
 
